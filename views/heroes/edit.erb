@@ -2,7 +2,7 @@
 
 <p>display form</p>
 
-<form action="/heroes" method="post">
+<form action="/heroes/<%= @hero.id %>" method="post">
 
 <label for="hero-name">Hero Name:</label>
 <input type="text" name="name" id="hero-name" value="<%= @hero.name %>">
