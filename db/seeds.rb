@@ -1,4 +1,4 @@
-require_relative( "../models/hero.rb" )
+require_relative( "../models/hero" )
 require("pry-byebug")
 
 hero1 = Hero.new({

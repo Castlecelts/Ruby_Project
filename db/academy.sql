@@ -6,7 +6,7 @@ CREATE TABLE heroes(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   world VARCHAR(255),
-  hireable BIT NOT NULL
+  hireable BOOLEAN NOT NULL
 );
 
 CREATE TABLE teams(
