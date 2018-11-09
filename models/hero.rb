@@ -43,6 +43,17 @@ class Hero
     return results.map { |hero| Hero.new(hero)  }
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM heroes
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    hero = Hero.new(result)
+    return hero
+  end
+
+
+
 
 
 

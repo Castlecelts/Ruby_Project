@@ -19,3 +19,9 @@ post '/heroes' do
   Hero.new(params).save
   redirect to '/heroes'
 end
+
+#show
+get '/heroes/:id' do
+  @hero = Hero.find(params['id'])
+  erb( :"heroes/show")
+end

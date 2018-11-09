@@ -4,7 +4,7 @@
 <hr />
 
 <% @heroes.each do |hero| %>
-  <p>Hero Name: <%= hero.name %></p>
+  <h1><a href="/heroes/<%= hero.id %>"><%= hero.name %></a></h1>
   <p>World: <%= hero.world %></p>
   <p>hireable <%= hero.hireable_pretty %></p>
   <hr />
