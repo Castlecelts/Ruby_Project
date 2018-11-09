@@ -8,3 +8,11 @@ hero1 = Hero.new({
   })
 
 hero1.save
+
+hero2 = Hero.new({
+  "name" => "Artanis",
+  "world" => "Starcraft",
+  "hireable" => true
+  })
+
+hero2.save

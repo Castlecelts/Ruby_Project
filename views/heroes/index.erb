@@ -1,6 +1,14 @@
 <h1>HEROES</h1>
 
 <p>List of all heroes</p>
+<hr />
+
+<% @heroes.each do |hero| %>
+  <p>Hero Name: <%= hero.name %></p>
+  <p>World: <%= hero.world %></p>
+  <p>hireable <%= hero.hireable %></p>
+  <hr />
+<% end %>
 
 <p> add HERO BUTTON</p>
 

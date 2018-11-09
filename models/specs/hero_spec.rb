@@ -39,5 +39,14 @@ class TestHero < MiniTest::Test
 
 ###############################################################################
 
+  def test_hireable_pretty_true()
+    result = @hero1.hireable_pretty
+    assert_equal("Available for Hire", result)
+  end
+
+  def test_hireable_pretty_false()
+    result = @hero2.hireable_pretty
+    assert_equal("This hero has been taken", result)
+  end
 
 end#of class
