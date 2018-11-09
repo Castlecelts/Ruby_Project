@@ -1,12 +1,13 @@
 require("minitest/autorun")
 require_relative("../hero")
+require('pry')
 
 class TestHero < MiniTest::Test
 
   def setup
-    @hero1 = Hero.new("id" => 1, "name" => "Thrall", "world" => "Warcraft", "hireable" => true)
+    @hero1 = Hero.new("id" => 1, "name" => "Thrall", "world" => "Warcraft", "hireable" => "t")
 
-    @hero2 = Hero.new("id" => 2, "name" => "Artanis", "world" => "Starcraft", "hireable" => false)
+    @hero2 = Hero.new("id" => 2, "name" => "Artanis", "world" => "Starcraft", "hireable" => "f")
 
   end#of setup
 
@@ -29,12 +30,12 @@ class TestHero < MiniTest::Test
 
   def test_hireable_true()
     result = @hero1.hireable()
-    assert_equal(true, result)
+    assert_equal("t", result)
   end
 
   def test_hireable_false()
     result = @hero2.hireable()
-    assert_equal(false, result)
+    assert_equal("f", result)
   end
 
 ###############################################################################

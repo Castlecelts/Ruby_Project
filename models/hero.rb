@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry')
 
 class Hero
 
@@ -13,9 +14,9 @@ class Hero
   end
 
   def hireable_pretty
-    if @hireable
+    if @hireable == "t"
       return "Available for Hire"
-    else
+    elsif @hireable == "f"
       return "This hero has been taken"
     end
   end

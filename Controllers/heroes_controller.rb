@@ -25,3 +25,9 @@ get '/heroes/:id' do
   @hero = Hero.find(params['id'])
   erb( :"heroes/show")
 end
+
+#edit
+get '/heroes/:id/edit' do
+  @hero = Hero.find(params['id'])
+  erb( :"heroes/edit")
+end
