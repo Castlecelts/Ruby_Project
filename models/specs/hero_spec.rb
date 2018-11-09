@@ -8,7 +8,9 @@ class TestHero < MiniTest::Test
 
     @hero2 = Hero.new("id" => 2, "name" => "Artanis", "world" => "Starcraft", "hireable" => false)
 
-  end
+  end#of setup
+
+  #############################################################################
 
   def test_id()
     result = @hero2.id()
@@ -34,5 +36,8 @@ class TestHero < MiniTest::Test
     result = @hero2.hireable()
     assert_equal(false, result)
   end
+
+###############################################################################
+
 
 end#of class
