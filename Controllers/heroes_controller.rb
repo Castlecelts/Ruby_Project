@@ -31,3 +31,10 @@ get '/heroes/:id/edit' do
   @hero = Hero.find(params['id'])
   erb( :"heroes/edit")
 end
+
+#update
+post '/heroes/:id' do
+  hero = Hero.new(params)
+  hero.update
+  redirect to "/heroes/#{params['id']}"
+end
