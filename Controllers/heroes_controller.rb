@@ -38,3 +38,10 @@ post '/heroes/:id' do
   hero.update
   redirect to "/heroes/#{params['id']}"
 end
+
+#delete
+post '/heroes/:id/delete' do
+  hero = Hero.find(params['id'])
+  hero.delete
+  redirect to '/heroes'
+end

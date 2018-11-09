@@ -54,30 +54,27 @@ class Hero
   end
 
   def update()
-  sql = "UPDATE heroes
-  SET
-  (
-    name,
-    world,
-    hireable
-  ) =
-  (
-    $1, $2, $3
-  )
-  WHERE id = $4"
-  values = [@name, @world, @hireable, @id]
-  SqlRunner.run(sql, values)
-end
+    sql = "UPDATE heroes
+    SET
+    (
+      name,
+      world,
+      hireable
+      ) =
+      (
+        $1, $2, $3
+      )
+      WHERE id = $4"
+      values = [@name, @world, @hireable, @id]
+      SqlRunner.run(sql, values)
+  end
 
-
-
-
-
-
-
-
-
-
+  def delete()
+    sql = "DELETE FROM heroes
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
 
 end#of class
