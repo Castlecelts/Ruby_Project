@@ -1,4 +1,5 @@
 require_relative( "../models/hero" )
+require_relative( "../models/team" )
 require("pry-byebug")
 
 hero1 = Hero.new({
@@ -16,3 +17,17 @@ hero2 = Hero.new({
   })
 
 hero2.save
+
+team1 = Team.new({
+  "name" => "GenG",
+  "region" => "North America"
+  })
+
+team1.save
+
+team2 = Team.new({
+  "name" => "Fnatic",
+  "region" => "Europe"
+  })
+
+team2.save
