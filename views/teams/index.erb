@@ -1,0 +1,13 @@
+<h1>TEAMS</h1>
+
+<p>list of all teams</p>
+<hr />
+
+<% @teams.each do |team| %>
+  <a href="/teams/<%= team.id %>">team.name</a>
+  <p>Region: <%= team.region %></p>
+<% end%>
+<br>
+
+<p>add team button</p>
+<p>add delete button?</p>
