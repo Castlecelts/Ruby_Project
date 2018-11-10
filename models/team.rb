@@ -34,36 +34,36 @@ class Team
     return results.map { |team| Team.new(team)  }
   end
 
-  # def self.find(id)
-  #   sql = "SELECT * FROM teams
-  #   WHERE id = $1"
-  #   values = [id]
-  #   result = SqlRunner.run(sql, values).first
-  #   team = Team.new(result)
-  #   return team
-  # end
-  #
-  # def update()
-  #   sql = "UPDATE teams
-  #   SET
-  #   (
-  #     name,
-  #     region
-  #     ) =
-  #     (
-  #       $1, $2
-  #     )
-  #     WHERE id = $3"
-  #     values = [@name, @region, @id]
-  #     SqlRunner.run(sql, values)
-  # end
-  #
-  # def delete()
-  #   sql = "DELETE FROM teams
-  #   WHERE id = $1"
-  #   values = [@id]
-  #   SqlRunner.run(sql, values)
-  # end
+  def self.find(id)
+    sql = "SELECT * FROM teams
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    team = Team.new(result)
+    return team
+  end
+  
+  def update()
+    sql = "UPDATE teams
+    SET
+    (
+      name,
+      region
+      ) =
+      (
+        $1, $2
+      )
+      WHERE id = $3"
+      values = [@name, @region, @id]
+      SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM teams
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
 
 end#of class
