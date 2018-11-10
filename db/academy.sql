@@ -1,4 +1,4 @@
-DROP TABLE team_rosters;
+DROP TABLE hero_teams;
 DROP TABLE teams;
 DROP TABLE heroes;
 
@@ -15,7 +15,7 @@ CREATE TABLE teams(
   region VARCHAR(255)
 );
 
-CREATE TABLE team_rosters(
+CREATE TABLE hero_teams(
   id SERIAL8 PRIMARY KEY,
   team_id SERIAL8 REFERENCES teams(id),
   hero_id SERIAL8 REFERENCES heroes(id)
