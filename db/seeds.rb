@@ -6,7 +6,7 @@ require("pry-byebug")
 hero1 = Hero.new({
   "name" => "Thrall",
   "world" => "Warcraft",
-  "hireable" => true
+  "hireable" => false
   })
 
 hero1.save
@@ -14,7 +14,7 @@ hero1.save
 hero2 = Hero.new({
   "name" => "Artanis",
   "world" => "Starcraft",
-  "hireable" => true
+  "hireable" => false
   })
 
 hero2.save
@@ -38,7 +38,7 @@ hero4.save
 hero5 = Hero.new({
   "name" => "Jaina",
   "world" => "Warcraft",
-  "hireable" => true
+  "hireable" => false
   })
 
 hero5.save
@@ -46,10 +46,34 @@ hero5.save
 hero6 = Hero.new({
   "name" => "Kael'thas",
   "world" => "Warcraft",
-  "hireable" => true
+  "hireable" => false
   })
 
 hero6.save
+
+hero7 = Hero.new({
+  "name" => "Kerrigan",
+  "world" => "Starcraft",
+  "hireable" => true
+  })
+
+hero7.save
+
+hero8 = Hero.new({
+  "name" => "Azmodan",
+  "world" => "Diablo",
+  "hireable" => true
+  })
+
+hero8.save
+
+hero9 = Hero.new({
+  "name" => "Varian",
+  "world" => "Warcraft",
+  "hireable" => true
+  })
+
+hero9.save
 
 ###############################################################################
 
