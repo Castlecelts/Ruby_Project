@@ -1,0 +1,20 @@
+<h1>Add a hero to team name</h1>
+
+<form class="" action="/hero_teams" method="post">
+
+  <label for="set_team">Team:</label>
+
+  <select id="set_team" name="name" >
+    <% @teams.each do |team| %>
+        <option value=<%= team.name%> selected><%= team.name %></option>
+    <% end %>
+  </select>
+  <br>
+
+  <label for="set_hero">Select Hero to add to Roster:</label>
+  <select id="set_hero" name="name" >
+    <% @heroes.each do |hero| %>
+        <option value=<%= hero.name%>><%= hero.name %></option>
+    <% end %>
+
+</form>
