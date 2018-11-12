@@ -25,8 +25,8 @@ end
 #show
 get '/teams/:id' do
   @team = Team.find(params['id'])
-  p @team
   @heroes = @team.hero_list()
+  @numbering = 0
   erb(:"teams/show")
 end
 

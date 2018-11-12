@@ -7,13 +7,7 @@
 <p>TEAM ROSTER</p>
 
 <br>
-<p>temp call</p>
 
-<% @heroes.each do |hero| %>
-  <p><%=hero.name%></p>
-  <p><%= hero.world%></p>
-<% end%>
-<br>
 
 <table>
   <tr>
@@ -27,9 +21,9 @@
   </tr>
 <% for hero in @heroes%>
   <tr>
-    <td>descending numbers(1..5) </td>
+    <td> <%= @numbering += 1 %> </td>
     <td>|</td>
-    <td><%= hero.name%> </td>
+    <td><a href="/heroes/<%= hero.id %>"><%= hero.name%></a> </td>
     <td>|</td>
     <td><%= hero.world%></td>
     <td>|</td>
@@ -40,9 +34,9 @@
 
 <br>
 
-<a href="/teams/<%= @team.id %>/edit">Edit</a>
+<a href="/teams/<%= @team.id %>/edit">Edit Team details</a>
 
 <br>
 <br>
 
-<form action="/teams/<%= @team.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+<form action="/teams/<%= @team.id %>/delete" method="POST"><input type="submit" value="Delete whole team"></form>
