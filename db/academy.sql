@@ -17,6 +17,6 @@ CREATE TABLE teams(
 
 CREATE TABLE hero_teams(
   id SERIAL8 PRIMARY KEY,
-  team_id SERIAL8 REFERENCES teams(id),
-  hero_id SERIAL8 REFERENCES heroes(id)
+  team_id SERIAL8 REFERENCES teams(id) ON DELETE CASCADE,
+  hero_id SERIAL8 REFERENCES heroes(id) ON DELETE CASCADE
 );

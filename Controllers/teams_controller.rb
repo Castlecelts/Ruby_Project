@@ -45,7 +45,7 @@ end
 
 #delete
 post '/teams/:id/delete' do
-  team = Team.find(params['id'])
-  team.delete
+  @team = Team.find(params['id'])
+  @team.delete
   redirect to '/teams'
 end
