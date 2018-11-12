@@ -51,8 +51,13 @@ class TestHero < MiniTest::Test
   end
 
   def test_hired()
-    result = @hero2.hired
+    result = @hero1.hired
     assert_equal(false, result)
+  end
+
+  def test_fired()
+    result = @hero2.fired
+    assert_equal(true, result)
   end
 
 end#of class

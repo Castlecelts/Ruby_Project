@@ -17,6 +17,10 @@ class Hero
     return @hireable = false
   end
 
+  def fired
+    return @hireable = true
+  end
+
   def hireable_pretty
     if @hireable == "t"
       return "Available for Hire"

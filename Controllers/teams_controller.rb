@@ -46,6 +46,12 @@ end
 #delete
 post '/teams/:id/delete' do
   @team = Team.find(params['id'])
+  heroes_in_team = @team.hero_list
+    to_be_updated = heroes_in_team.each {|hero| hero.fired}
+    # binding.pry
+    to_be_updated.each{|hero| hero.update}
+
+  # binding.pry
   @team.delete
   redirect to '/teams'
 end
