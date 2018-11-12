@@ -21,15 +21,21 @@
     <th></th>
     <th>Hero Name</th>
     <th></th>
+    <th>World</th>
+    <th></th>
     <th>Role</th>
   </tr>
+<% for hero in @heroes%>
   <tr>
     <td>descending numbers(1..5) </td>
     <td>|</td>
-    <td>name of hero </td>
+    <td><%= hero.name%> </td>
+    <td>|</td>
+    <td><%= hero.world%></td>
     <td>|</td>
     <td>what they do</td>
   </tr>
+<% end%>
 </table>
 
 <br>
