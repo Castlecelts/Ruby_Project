@@ -1,6 +1,8 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/team')
+require_relative('../models/hero')
+require_relative('../models/hero-team')
 also_reload('../models/*')
 
 #index
@@ -23,6 +25,8 @@ end
 #show
 get '/teams/:id' do
   @team = Team.find(params['id'])
+  p @team
+  @heroes = @team.hero_list()
   erb(:"teams/show")
 end
 

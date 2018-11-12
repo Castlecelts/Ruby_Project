@@ -1,4 +1,6 @@
 require_relative('../db/sql_runner')
+require_relative('./hero')
+require_relative('./team')
 require('pry')
 
 class HeroTeam
@@ -28,11 +30,59 @@ class HeroTeam
   end
 
   def heroes()
-    sql = "SELECT * FROM heroes WHERE id = $1"
+    sql = "SELECT heroes.* FROM heroes WHERE id = $1"
     values = [@hero_id]
     results = SqlRunner.run(sql, values)
-    return Hero.new(results.new)
+    return Hero.new(results.first)
   end
+
+  def teams()
+    sql = "SELECT teams.* FROM teams WHERE id = $1"
+    values = [@team_id]
+    results = SqlRunner.run(sql, values)
+    return Team.new(results.first)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM hero_teams"
+    results = SqlRunner.run(sql)
+    return results.map { |join| HeroTeam.new(join)  }
+  end
+
+
+
+  # def self.find(id)
+  #   sql = "SELECT * FROM hero_teams
+  #   WHERE id = $1"
+  #   values = [id]
+  #   result = SqlRunner.run(sql, values).first
+  #   heroteam = HeroTeam.new(result)
+  #   return heroteam
+  # end
+
+  # def update()
+  #   sql = "UPDATE heroes
+  #   SET
+  #   (
+  #     name,
+  #     world,
+  #     hireable
+  #     ) =
+  #     (
+  #       $1, $2, $3
+  #     )
+  #     WHERE id = $4"
+  #     values = [@name, @world, @hireable, @id]
+  #     SqlRunner.run(sql, values)
+  # end
+
+  def delete()
+    sql = "DELETE FROM hero_teams
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
 
 
 end#of class

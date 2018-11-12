@@ -1,4 +1,7 @@
 require_relative('../db/sql_runner')
+require_relative('./hero')
+require_relative('./hero-team')
+
 require('pry')
 
 class Team
@@ -42,7 +45,7 @@ class Team
     team = Team.new(result)
     return team
   end
-  
+
   def update()
     sql = "UPDATE teams
     SET
@@ -63,6 +66,17 @@ class Team
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def hero_list()
+    sql = "SELECT heroes.* FROM heroes
+    INNER JOIN hero_teams
+    ON hero_teams.hero_id = heroes.id
+    WHERE team_id = $1"
+    values = [@id]
+    heroes_hash = SqlRunner.run(sql, values)
+    heroes = heroes_hash.map{|hero| Hero.new(hero)}
+    return heroes
   end
 
 

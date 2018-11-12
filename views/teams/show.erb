@@ -7,6 +7,32 @@
 <p>TEAM ROSTER</p>
 
 <br>
+<p>temp call</p>
+
+<% @heroes.each do |hero| %>
+  <p><%=hero.name%></p>
+  <p><%= hero.world%></p>
+<% end%>
+<br>
+
+<table>
+  <tr>
+    <th>#</th>
+    <th></th>
+    <th>Hero Name</th>
+    <th></th>
+    <th>Role</th>
+  </tr>
+  <tr>
+    <td>descending numbers(1..5) </td>
+    <td>|</td>
+    <td>name of hero </td>
+    <td>|</td>
+    <td>what they do</td>
+  </tr>
+</table>
+
+<br>
 
 <a href="/teams/<%= @team.id %>/edit">Edit</a>
 
