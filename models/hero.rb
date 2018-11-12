@@ -44,6 +44,12 @@ class Hero
     return results.map { |hero| Hero.new(hero)  }
   end
 
+  def self.all_true()
+    sql = "SELECT * FROM heroes WHERE hireable = true"
+    results = SqlRunner.run(sql)
+    return results.map { |hero| Hero.new(hero)  }
+  end
+
   def self.find(id)
     sql = "SELECT * FROM heroes
     WHERE id = $1"
