@@ -2,19 +2,25 @@
 
 <form class="" action="/hero_teams" method="post">
 
-  <label for="set_team">Team:</label>
+  <input type="hidden" name="team_id" value="<%= @team.id %>">
 
-  <select id="set_team" name="name" >
-    <% @teams.each do |team| %>
-        <option value=<%= team.name%> selected><%= team.name %></option>
-    <% end %>
-  </select>
+
+  <label for="set_team">Team:</label>
+  <select id="set_team" name="team_id" >
+        <option value=<%= @team.id%>><%= @team.name %></option>
+    </select>
+
   <br>
 
   <label for="set_hero">Select Hero to add to Roster:</label>
-  <select id="set_hero" name="name" >
+  <select id="set_hero" name="hero_id" >
     <% @heroes.each do |hero| %>
-        <option value=<%= hero.name%>><%= hero.name %></option>
+        <option value=<%= hero.id%>><%= hero.name %></option>
     <% end %>
+    </select>
+<br>
+<br>
+<input type="submit" value="Add Hero to Roster"/>
+
 
 </form>

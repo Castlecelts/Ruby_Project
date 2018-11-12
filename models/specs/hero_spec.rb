@@ -2,32 +2,57 @@ require("minitest/autorun")
 require_relative("../hero")
 require('pry')
 
-class TestTeam < MiniTest::Test
+class TestHero < MiniTest::Test
 
   def setup
-    @team1 = Team.new("id" => 1, "name" => "GenG", "region" => "North America")
+    @hero1 = Hero.new("id" => 1, "name" => "Thrall", "world" => "Warcraft", "hireable" => "t")
 
-    @team2 = Team.new("id" => 2, "name" => "Fnatic", "region" => "Europe")
+    @hero2 = Hero.new("id" => 2, "name" => "Artanis", "world" => "Starcraft", "hireable" => "f")
 
   end#of setup
 
   #############################################################################
 
   def test_id()
-    result = @team2.id()
+    result = @hero2.id()
     assert_equal(2, result)
   end
 
   def test_name()
-    result = @team1.name()
-    assert_equal("GenG", result)
+    result = @hero1.name()
+    assert_equal("Thrall", result)
   end
 
-  def test_region()
-    result = @team1.region()
-    assert_equal("North America", result)
+  def test_world()
+    result = @hero1.world()
+    assert_equal("Warcraft", result)
+  end
+
+  def test_hireable_true()
+    result = @hero1.hireable()
+    assert_equal("t", result)
+  end
+
+  def test_hireable_false()
+    result = @hero2.hireable()
+    assert_equal("f", result)
   end
 
 ###############################################################################
+
+  def test_hireable_pretty_true()
+    result = @hero1.hireable_pretty
+    assert_equal("Available for Hire", result)
+  end
+
+  def test_hireable_pretty_false()
+    result = @hero2.hireable_pretty
+    assert_equal("This hero has been taken", result)
+  end
+
+  def test_hired()
+    result = @hero2.hired
+    assert_equal(false, result)
+  end
 
 end#of class

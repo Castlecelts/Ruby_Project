@@ -13,6 +13,10 @@ class Hero
     @hireable = params['hireable']
   end
 
+  def hired
+    return @hireable = false
+  end
+
   def hireable_pretty
     if @hireable == "t"
       return "Available for Hire"
