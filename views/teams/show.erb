@@ -1,7 +1,7 @@
 <h1>Team Details</h1>
 
-<p><%= @team.name %></p>
-<p><%= @team.region %></p>
+<h2><%= @team.name %></h2>
+<p>Region: <%= @team.region %></p>
 <br>
 
 <p>TEAM ROSTER</p>
@@ -12,21 +12,15 @@
 <table>
   <tr>
     <th>#</th>
-    <th></th>
     <th>Hero Name</th>
-    <th></th>
     <th>World</th>
-    <th></th>
     <th>Role</th>
   </tr>
 <% for hero in @heroes%>
   <tr>
     <td> <%= @numbering += 1 %> </td>
-    <td>|</td>
     <td><a href="/heroes/<%= hero.id %>"><%= hero.name%></a> </td>
-    <td>|</td>
     <td><%= hero.world%></td>
-    <td>|</td>
     <td>what they do</td>
   </tr>
 <% end%>
@@ -36,6 +30,8 @@
 
 <a href="/hero_teams/new?team_id=<%= @team.id %>">Add Hero to Team Roster</a>
 
+<br>
+<br>
 <br>
 
 <a href="/teams/<%= @team.id %>/edit">Edit Team details</a>
