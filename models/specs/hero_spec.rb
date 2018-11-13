@@ -47,7 +47,7 @@ class TestHero < MiniTest::Test
 
   def test_hireable_pretty_false()
     result = @hero2.hireable_pretty
-    assert_equal("This hero has been taken", result)
+    assert_equal("This hero has been drafted", result)
   end
 
   def test_hired()

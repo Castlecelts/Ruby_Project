@@ -4,12 +4,8 @@
 <hr />
 
 <% @heroes.each do |hero| %>
-  <h1><a href="/heroes/<%= hero.id %>"><%= hero.name %></a></h1>
+  <h2><a href="/heroes/<%= hero.id %>"><%= hero.name %></a></h2>
   <p>World: <%= hero.world %></p>
-  <p>hireable <%= hero.hireable_pretty %></p>
+  <p><%= hero.hireable_pretty %></p>
   <hr />
 <% end %>
-
-<p> add HERO BUTTON</p>
-
-<p>delete HERO BUTTON</p>

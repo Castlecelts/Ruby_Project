@@ -25,7 +25,7 @@ class Hero
     if @hireable == "t"
       return "Available for Hire"
     elsif @hireable == "f"
-      return "This hero has been taken"
+      return "This hero has been drafted"
     end
   end
 
