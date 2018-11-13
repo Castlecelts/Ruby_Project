@@ -24,7 +24,12 @@ body {
   font-family: 'Merriweather', serif;
   padding: 20px;
   margin: 10px;
+  text-align: center;
 }
+
+/* .body1.h1{
+  position: absolute;
+} */
 
 img {
     position: absolute;
