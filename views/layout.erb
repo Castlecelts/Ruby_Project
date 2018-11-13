@@ -9,26 +9,30 @@
 </head>
 
 <body>
-  <div class="flex-container">
+  <div class="flex-container horizontal">
     <div style="flex-grow: 1">
       <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/heroes">Heroes</a>
-          </li>
-          <li>
-            <a href="/teams">Teams</a>
-          </li>
-          <li>
-            <a href="/heroes/new">Add a new Hero to Academy</a>
-          </li>
-          <li>
-            <a href="/teams/new">Add a new Team</a>
-          </li>
-        </ul>
+        <div class="flex-container vertical">
+
+      
+          <div style="flex-grow: 1">
+
+            <a href="/" class="button">Home</a>
+            </div>
+
+            <div style="flex-grow: 1">
+            <a href="/heroes" class="button">Heroes</a>
+            </div>
+            <div style="flex-grow: 1">
+            <a href="/teams" class="button">Teams</a>
+            </div>
+            <div style="flex-grow: 1">
+            <a href="/heroes/new" class="button">Add a new Hero to Academy</a>
+            </div>
+            <div style="flex-grow: 1">
+            <a href="/teams/new" class="button">Add a new Team</a>
+            </div>
+          </div>
       </nav>
     </div>
     <div style="flex-grow: 2">
