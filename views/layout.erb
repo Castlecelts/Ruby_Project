@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="/styles/structure.css">
-  </head>
-  <body>
-    <nav>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+
+</head>
+
+<body>
+  <div class="flex-container">
+    <div style="flex-grow: 1">
+      <nav>
         <ul>
           <li>
             <a href="/">Home</a>
@@ -25,6 +29,14 @@
           </li>
         </ul>
       </nav>
-      <%= yield %>
-    </body>
-</html>
+    </div>
+    <div style="flex-grow: 2">
+      <div class="body1">
+        <%= yield %></div>
+      </div>
+      <div style="flex-grow: 1">Identification text</div>
+    </div>
+
+
+  </body>
+  </html>

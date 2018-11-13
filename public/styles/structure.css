@@ -3,3 +3,38 @@ h1 {
   color: darkred;
   margin-bottom: 20px;
 }
+
+body {
+  background:url('/images/Unranked_draft_Mode_trimmed.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Merriweather', serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+.body1 {
+  background:white;
+  background-size: 100%;
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  color: black;
+  font-family: 'Merriweather', serif;
+  padding: 20px;
+  margin: 10px;
+}
+
+img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
