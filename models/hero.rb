@@ -92,13 +92,12 @@ class Hero
 
   def join_table_id()
     sql = "SELECT hero_teams.id FROM hero_teams
-    INNER JOIN heroes
-    ON hero_teams.hero_id = heroes.id
-    WHERE heroes.id = $1"
+    WHERE hero_id = $1"
     values = [@id]
-    join_id_hash = SqlRunner.run(sql)
+    join_id_array = SqlRunner.run(sql,values)
     # join_id = join_id_hash.map{|ele| HeroTeam.new(ele)}
-    return join_id_hash
+    join_id_hash= join_id_array.first
+    return join_id_hash['id']
   end
 
 

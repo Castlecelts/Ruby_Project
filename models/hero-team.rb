@@ -65,10 +65,10 @@ class HeroTeam
     SqlRunner.run(sql, values)
   end
 
-  def self.delete(hero_id)
+  def self.delete_hero(id)
     sql = "DELETE FROM hero_teams
-    WHERE hero_id = $1"
-    values = [@hero_id]
+    WHERE id = $1"
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 

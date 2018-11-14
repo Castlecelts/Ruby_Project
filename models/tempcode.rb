@@ -13,8 +13,10 @@
     #UNIQUE means id can't be repeated
   );
 
-<form action="/hero_teams/<%=@hero.id %>/delete" method="POST"><input type="submit" value="Delete Hero"></form>>
+<form action="/hero_teams/<%=@hero.id %>/delete" method="POST"><input type="submit" value="Delete Hero"></form>
 
 <%= hero.join_table_id%>
 
 background-color: #4CAF50;
+
+<form action="/hero_teams/<%=hero.join_table_id %>/delete" method="POST"><input type="submit" value="Delete Hero"></form>

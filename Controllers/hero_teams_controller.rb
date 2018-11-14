@@ -31,6 +31,6 @@ end
 #delete
 post '/hero_teams/:id/delete' do
   @hero_teams = HeroTeam.all()
-  @hero_teams.delete(params['id'])
+  @hero_teams.delete_hero(params['id'])
     redirect to '/teams'
 end
