@@ -23,8 +23,7 @@
     <td><a href="/heroes/<%= hero.id %>"><%= hero.name%></a> </td>
     <td><%= hero.world%></td>
     <td>what they do</td>
-
-    <td><%= hero.join_table_id %></td>
+    <td><form action="/hero_teams/<%=hero.join_table_id %>/delete" method="POST"><input type="submit" value="Delete Hero"></form> </td>
   </tr>
 <% end%>
 </table>

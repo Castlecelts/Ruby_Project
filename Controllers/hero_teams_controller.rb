@@ -30,7 +30,11 @@ end
 
 #delete
 post '/hero_teams/:id/delete' do
-  @hero_teams = HeroTeam.all()
-  @hero_teams.delete_hero(params['id'])
+  @hero_teams_row = HeroTeam.find(params['id'])
+  heroes_in_team = @hero_teams_row.heroes
+    heroes_in_team.fired
+    heroes_in_team.update
+
+  @hero_teams_row.delete
     redirect to '/teams'
 end
