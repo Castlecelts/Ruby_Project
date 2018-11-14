@@ -18,10 +18,6 @@ class Hero
   end
 
   def fired
-    # sql = "UPDATE heroes SET hireable = $1
-    # WHERE id = $2"
-    # values = ["t", @id]
-    # SqlRunner.run(sql, values)
     return @hireable = true
   end
 
@@ -99,7 +95,6 @@ class Hero
     WHERE hero_id = $1"
     values = [@id]
     join_id_array = SqlRunner.run(sql,values)
-    # join_id = join_id_hash.map{|ele| HeroTeam.new(ele)}
     join_id_hash= join_id_array.first
     return join_id_hash['id']
   end

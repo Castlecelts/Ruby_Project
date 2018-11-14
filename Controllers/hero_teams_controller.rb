@@ -34,7 +34,6 @@ post '/hero_teams/:id/delete' do
   heroes_in_team = @hero_teams_row.heroes
     heroes_in_team.fired
     heroes_in_team.update
-
   @hero_teams_row.delete
     redirect to '/teams'
 end
