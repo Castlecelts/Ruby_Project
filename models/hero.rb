@@ -18,11 +18,11 @@ class Hero
   end
 
   def fired
-    sql = "UPDATE heroes SET hireable = $1
-    WHERE id = $2"
-    values = [true, @id]
-    SqlRunner.run(sql, values)
-    # return @hireable = true
+    # sql = "UPDATE heroes SET hireable = $1
+    # WHERE id = $2"
+    # values = ["t", @id]
+    # SqlRunner.run(sql, values)
+    return @hireable = true
   end
 
   def hireable_pretty
