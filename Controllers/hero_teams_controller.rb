@@ -10,7 +10,6 @@ get '/hero_teams' do
   "Hello World"
 end
 
-
 #new
 get '/hero_teams/new' do
   @team = Team.find(params['team_id'])
@@ -25,7 +24,6 @@ post '/hero_teams' do
   hero.hired
   hero.update
   redirect to '/teams'
-  # '/teams/#{params['team_id']}'
 end
 
 #delete

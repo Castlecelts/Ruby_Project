@@ -75,8 +75,6 @@ hero9 = Hero.new({
 
 hero9.save
 
-###############################################################################
-
 team1 = Team.new({
   "name" => "GenG",
   "region" => "North America"
@@ -90,8 +88,6 @@ team2 = Team.new({
   })
 
 team2.save
-
-###############################################################################
 
 hero1_team1  = HeroTeam.new({
   "team_id" => team1.id,

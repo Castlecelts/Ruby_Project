@@ -8,10 +8,7 @@ class TestTeam < MiniTest::Test
     @team1 = Team.new("id" => 1, "name" => "GenG", "region" => "North America")
 
     @team2 = Team.new("id" => 2, "name" => "Fnatic", "region" => "Europe")
-
-  end#of setup
-
-  #############################################################################
+  end
 
   def test_id()
     result = @team2.id()
@@ -28,6 +25,4 @@ class TestTeam < MiniTest::Test
     assert_equal("North America", result)
   end
 
-###############################################################################
-
-end#of class
+end

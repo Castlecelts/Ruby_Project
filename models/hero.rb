@@ -100,4 +100,4 @@ class Hero
   end
 
 
-end#of class
+end

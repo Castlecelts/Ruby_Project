@@ -13,11 +13,7 @@ class TestHeroTeam < MiniTest::Test
     @hero3_team5 = HeroTeam.new("id" => 2, "team_id" => 5, "hero_id" => 3)
 
     @hero2_team6 = HeroTeam.new("id" => 2, "team_id" => 5, "hero_id" => 3)
-
-
-  end#of setup
-
-  #############################################################################
+  end
 
   def test_id()
     result = @hero1_team5.id()
@@ -34,4 +30,4 @@ class TestHeroTeam < MiniTest::Test
     assert_equal(1, result)
   end
 
-end#of class
+end

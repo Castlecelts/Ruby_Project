@@ -23,8 +23,6 @@ end
 #show
 get '/heroes/:id' do
   @hero = Hero.find(params['id'])
-  # binding.pry
-
   erb( :"heroes/show")
 end
 
