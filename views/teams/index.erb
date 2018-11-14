@@ -1,10 +1,11 @@
 <h1>TEAMS</h1>
 
-<p>list of all teams</p>
+<h3>List of all Teams</h3>
 <hr />
 
 <% @teams.each do |team| %>
-  <h1><a href="/teams/<%= team.id %>"><%=team.name%></a></h1>
+  <h2><a href="/teams/<%= team.id %>"><%=team.name%></a></h2>
   <p>Region: <%= team.region %></p>
 <% end%>
+<hr />
 <br>
