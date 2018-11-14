@@ -90,5 +90,16 @@ class Hero
     SqlRunner.run(sql, values)
   end
 
+  def join_table_id()
+    sql = "SELECT hero_teams.id FROM hero_teams
+    INNER JOIN heroes
+    ON hero_teams.hero_id = heroes.id
+    WHERE heroes.id = $1"
+    values = [@id]
+    join_id_hash = SqlRunner.run(sql)
+    # join_id = join_id_hash.map{|ele| HeroTeam.new(ele)}
+    return join_id_hash
+  end
+
 
 end#of class

@@ -24,5 +24,13 @@ post '/hero_teams' do
   hero = Hero.find(params['hero_id'])
   hero.hired
   hero.update
-  redirect to'/teams'
+  redirect to '/teams'
+  # '/teams/#{params['team_id']}'
+end
+
+#delete
+post '/hero_teams/:id/delete' do
+  @hero_teams = HeroTeam.all()
+  @hero_teams.delete(params['id'])
+    redirect to '/teams'
 end

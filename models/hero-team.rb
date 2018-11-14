@@ -49,16 +49,30 @@ class HeroTeam
     return results.map { |join| HeroTeam.new(join)  }
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM hero_teams
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    heroteam = HeroTeam.new(result)
+    return heroteam
+  end
+
+  def delete()
+    sql = "DELETE FROM hero_teams
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete(hero_id)
+    sql = "DELETE FROM hero_teams
+    WHERE hero_id = $1"
+    values = [@hero_id]
+    SqlRunner.run(sql, values)
+  end
 
 
-  # def self.find(id)
-  #   sql = "SELECT * FROM hero_teams
-  #   WHERE id = $1"
-  #   values = [id]
-  #   result = SqlRunner.run(sql, values).first
-  #   heroteam = HeroTeam.new(result)
-  #   return heroteam
-  # end
 
   # def update()
   #   sql = "UPDATE heroes
@@ -75,14 +89,6 @@ class HeroTeam
   #     values = [@name, @world, @hireable, @id]
   #     SqlRunner.run(sql, values)
   # end
-
-  def delete()
-    sql = "DELETE FROM hero_teams
-    WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
-
 
 
 end#of class
